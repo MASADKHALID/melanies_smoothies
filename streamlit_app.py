@@ -12,6 +12,8 @@ st.write(
     """
 )
 
+cnx =st.connection("snowflake")
+session=cnx.session()
 from snowflake.snowpark.functions import col
 
 session = get_active_session()
