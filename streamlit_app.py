@@ -1,7 +1,7 @@
 # Import python packages
 import streamlit as st
 import requests
-from snowflake.snowpark.functions import col
+#from snowflake.snowpark.functions import col
 # Write directly to the app
 st.title("Example Streamlit App :balloon:")
 st.write(
@@ -12,8 +12,8 @@ st.write(
     """
 )
 
-cnx =st.connection("snowflake")
-session=cnx.session()
+#cnx =st.connection("snowflake")
+#session=cnx.session()
 
 
 #session = get_active_session()
