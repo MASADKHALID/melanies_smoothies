@@ -3,13 +3,9 @@ import streamlit as st
 import requests
 from snowflake.snowpark.functions import col
 # Write directly to the app
-st.title("Example Streamlit App :balloon:")
+st.title(":cup_with_straw:Customize Your Smoothie!:cup_with_straw")
 st.write(
-    """Replace this example with your own code!
-    **And if you're new to Streamlit,** check
-    out our easy-to-follow guides at
-    [docs.streamlit.io](https://docs.streamlit.io).
-    """
+    """choose the fruit you want in your custome Smoothie"""
 )
 
 cnx =st.connection("snowflake")
@@ -21,6 +17,7 @@ my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT
 ingredients_list=st.multiselect(
         'choose up to 5 ingredients:',
         my_dataframe
+        ,max_selection=5
 )
 if ingredients_list:
     ingredients_string=''
